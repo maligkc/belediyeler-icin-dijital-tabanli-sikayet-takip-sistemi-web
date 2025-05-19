@@ -1,0 +1,298 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.app-header {
+    /*padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #172679;
+    color: white;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #172679;
+    color: white;
+}
+
+.app-header h2 {
+    margin: 0;
+}
+
+.logo {
+    height: 80px;
+    margin: 0 15px;
+}
+
+.app-content {
+    display: flex;
+    flex: 1;
+    padding: 10px;
+    background-color: #f8f9fa;
+    align-items: stretch;
+    height: 600px; /* İç paneller için sabit bir yükseklik */
+}
+
+.personnel-panel, .complaints-panel, .sikayet {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+
+
+.personnel-image{
+    height: 50%;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+ .complaints-panel {
+    flex: 1;
+    max-height: 100%; /* Panellerin belirlenen yüksekliği korumasını sağlar */
+}
+
+.complaints-panel {
+    margin-left: 10px;
+}
+
+.complaint-detail-panel {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+
+    min-height: 100%; /* Daha büyük bir yükseklik verdik */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+.complaint-detail-panel p{
+    padding: 1%;
+}
+.sikayet {
+    flex: 2;  /* Önce 2 idi, şimdi daha büyük */
+    max-height: 100%; /* Yüksekliği koru */
+    padding: 20px;
+}
+/*
+.sikayet {
+    flex: 2;
+    max-height: 100%; /* Panellerin belirlenen yüksekliği korumasını sağlar
+    position: relative;
+}
+*/
+.complaint-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.complaint-list li {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.complaint-list li:hover {
+    background-color: #cbcbcb;
+}
+
+.department-panel {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+/*
+.complaint-image {
+    width: 100%;
+    max-width: 250px;
+    margin-top: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+*/
+
+.complaint-image {
+    width: 80%; /* Resmi büyütelim */
+    max-width: 400px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.konum-container {
+    position: absolute;
+    bottom: 20px; /* Alt kısma yerleştir */
+    right: 20px; /* Sağ tarafa yasla */
+    width: 300px;
+    height: 250px;
+    border: 2px solid red; /* Kırmızı çerçeve */
+    border-radius: 8px; /* Kenarları yuvarla */
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.konum-container h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+#complaint-map {
+    width: 280px;
+    height: 200px;
+    border-radius: 5px;
+}
+/*
+complaint-map{
+    width: 100%;
+    height: 300px;  Harita boyutunu belirleyelim
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 15px;}
+*/
+.btn {
+    margin-top: 10px;
+}
+.section2{
+    height: 100%;
+    width: auto;
+}
+.body-login{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 90vh;
+    font-family: Arial, sans-serif;
+    background: #172679;
+}
+.login-container{
+    background: #ffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+
+}
+.login-container h1{
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+.login-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.login-container input, .login-container button{
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.login-container button{
+    background: #7d93ff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.login-container button:hover{
+    background: #0b1d79;
+}
+.login-container a{
+    text-decoration: none;
+    padding: 15px;
+    color: #0b1d79;
+    transition: text-shadow 0.3s ease;
+    
+}
+.login-container a:hover{
+    text-decoration: none;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    color: #0b1d79;
+}
+.login-image{
+    margin: 50px;
+}
+.login-image img{
+    height: 300px;
+    width: auto;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+.complaint-list li {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.complaint-list li:hover {
+    background-color: #cbcbcb;
+}
+
+.logout-button {
+    margin-left: auto;
+    background-color: #dc3545;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+.complaint-image {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.status-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}

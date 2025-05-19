@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<style>
+    #harita{
+        width: 100%;
+        height: 500px;
+        border: 1px solid black;
+    }
+</style>
+</head>
+<body>
+    <div id="harita"></div>
+
+
+
+<script>
+    function initMap(){
+        var map = new google.maps.Map(document.getElementById("harita"), {
+            center: {lat: 0, lng: 0},
+            zoom: 10
+
+
+        });
+    }
+
+</script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAixj6EKm6-gwnSdq4nSoagwbuDPwOzYEM&callback=initMap&v=weekly"></script>
+
+
+</body>
+</html>

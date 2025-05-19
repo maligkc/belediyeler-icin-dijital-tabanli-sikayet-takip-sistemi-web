@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap</title>
+<!--    <link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+
+</head>
+
+<body class="body-login">
+
+<script>
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1); // Kullanıcı geri gitmeye çalışırsa sayfa hemen ileri gider
+    };
+</script>
+
+    <header class="login-image">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+
+    </header>
+
+    <div class="login-container">
+        <h1>Giriş Yap</h1>
+        <form action="/login" method="POST">
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Şifre" required>
+            <button type="submit">Giriş Yap</button>
+            {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+            {% endif %}
+        </form>
+<!--        <a href="#">Şifremi unuttum</a>-->
+    </div>
+
+
+
+
+<!--    <script src="app.js"></script>-->
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>

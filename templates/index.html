@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>ŞİKAYETLER</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+            <h2>ŞİKAYETLER</h2>
+            <a href="{{ url_for('logout') }}" class="btn btn-danger logout-button">Çıkış Yap</a>
+        </header>
+
+
+        <div class="app-content">
+            <!-- Kullanıcı Bilgileri -->
+            <div class="personnel-panel text-center">
+                <img src="{{ url_for('static', filename='images/pngegg.png') }}" alt="Personnel" class="personnel-image">
+                <h3 id="personnel-name">{{ user['per_ad'] }} {{ user['per_soyad'] }}</h3>
+                <p>ID: <span id="personnel-id">{{ user['per_id'] }}</span></p>
+                <p>Email: <span id="personnel-email">{{ user['per_mail'] }}</span></p>
+                <p>Telefon: <span id="personnel-phone">{{ user['per_telefon'] }}</span></p>
+            </div>
+
+            <!-- Şikayet Listesi -->
+            <div class="complaints-panel">
+                <h4>Şikayet Listesi</h4>
+                <ul class="complaint-list" id="complaint-list">
+                    {% for complaint in complaints %}
+                        <li class="list-group-item" onclick="showComplaintDetails({{ complaint['idsikayetler'] }})">
+                            <p><strong>ID:</strong> {{ complaint['idsikayetler'] }}</p>
+                            <p><strong>Konu:</strong> {{ complaint['sikayetKonu'] }}</p>
+                            <p><strong>Tarih:</strong> {{ complaint['sikayetTarih'] }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Şikayet Detayları -->
+            <div class="sikayet">
+                <div class="complaint-detail-panel" id="complaint-detail">
+                    <h2>Bir şikayet seçiniz</h2>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAixj6EKm6-gwnSdq4nSoagwbuDPwOzYEM&callback=haritayiBaslat" async defer></script>
+
+</body>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</html>
